@@ -1,0 +1,10 @@
+<h2>Store Details</h2>
+
+<div *ngIf="store">
+  <h3>{{ store.shopName }}</h3>
+  <h4>{{ store.ownerName }}</h4>
+ 
+  <p>{{ store.physicalAddress }}</p>
+  
+  <button (click)="addToStore(store)">Add Store</button>
+</div>

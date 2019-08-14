@@ -1,0 +1,17 @@
+[
+    {
+      "category": "Mall",
+      "storeName": "Bellevue Square Mall",
+      "physicalAddress" : "575 Bellevue Square, Bellevue, WA 98004"
+    },
+    {
+      "category": "Store",
+      "storeName": "Emiye Mercato",
+      "physicalAddress" : "5710 Rainier Ave S, Seattle, WA 98118"
+    },
+    {
+      "category": "Shop",
+      "storeName": "Costco",
+      "physicalAddress" : " 8629 120th Ave NE, Kirkland, WA 98033"
+    }
+  ]

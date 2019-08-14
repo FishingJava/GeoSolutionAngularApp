@@ -1,0 +1,37 @@
+<h2>Products</h2>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
+<div *ngFor="let store of stores; index as storeId">
+
+  <h3>
+    <a [title]="store.shopName + ' details'" [routerLink]="['/stores', storeId]">
+      {{ store.shopName }}
+    </a>
+  </h3>
+<!-- . . . -->
+</div>
+<!-- <div *ngFor="let store of stores">
+
+   <h3>
+    <a [title]="store.shopName + ' details'">
+      {{ store.shopName }}
+    </a>
+  </h3>
+   <p *ngIf="store.ownerName">
+    Owner Name: {{ store.ownerName }}
+  </p>
+  
+ <button (click)="share()">
+    Share
+  </button>
+
+<app-product-alerts
+  [store]="store" 
+  (notify)="onNotify()">
+</app-store-alerts>
+</div> -->
