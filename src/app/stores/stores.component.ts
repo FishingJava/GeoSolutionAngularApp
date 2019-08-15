@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GeoService } from '../geo.service';
+import { GeoService } from '../services/geo.service';
+//import { GeoService } from '../geo.service';
 
 @Component({
   selector: 'app-stores',
