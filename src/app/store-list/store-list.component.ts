@@ -30,4 +30,12 @@ export class StoreListComponent implements OnInit {
      }
    }
 
+   addToStore(store) {
+    window.alert('The store has been added!');
+
+    //ToDo: Remove the above the alert and perform
+    // the actual add operation as shown below.
+    //this.geoService.addToStore(store);
+  }
+
 }

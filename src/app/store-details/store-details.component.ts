@@ -34,8 +34,10 @@ export class StoreDetailsComponent implements OnInit {
   });
   }
 
-  addToStore(store) {
-    window.alert('The store has been added!');
-    this.geoservoce.addToStore(store);
+  editStore(store) {
+    window.alert('The store has been edited!');
+    //ToDo: Remove the above the alert and perform
+    // the actual update operation as shown below.    
+    //this.geoservoce.updateStore(store);
   }
 }

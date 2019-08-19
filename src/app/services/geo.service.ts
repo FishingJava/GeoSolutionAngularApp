@@ -16,6 +16,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class GeoService {
+  
   items = [];
   constructor (
     private apiService: ApiService
@@ -24,7 +25,17 @@ export class GeoService {
   
 
   addToStore(store) {
+    //ToDo: properly hook it to the ApiService http post method.
     this.items.push(store);
+  }
+
+  updateStore(store: any) {
+    //ToDo: properly hook it to the ApiService http put method.  
+    let index = this.items.find(storeItem=> storeItem.id == store.id);
+    if(index != -1) {
+      // update the store (removing element at index value and adding the updated one in place of it).
+      this.items.splice(index,1, store);     
+    }    
   }
 
   getItems() {
