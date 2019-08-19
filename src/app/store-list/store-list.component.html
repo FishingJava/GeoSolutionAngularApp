@@ -6,10 +6,10 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 -->
-<div *ngFor="let store of stores; index as storeId">
+<div *ngFor="let store of stores">
 
   <h3>
-    <a [title]="store.shopName + ' details'" [routerLink]="['/stores', storeId]">
+    <a [title]="store.shopName + ' details'" [routerLink]="['/stores', store.id]">
       {{ store.shopName }}
     </a>
   </h3>

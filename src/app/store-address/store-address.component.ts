@@ -4,15 +4,15 @@ import { GeoService } from '../services/geo.service';
 
 @Component({
   selector: 'app-stores',
-  templateUrl: './stores.component.html',
-  styleUrls: ['./stores.component.less']
+  templateUrl: './store-address.component.html',
+  styleUrls: ['./store-address.component.less']
 })
-export class StoresComponent implements OnInit {
-  storeAddresses;
+export class StoreAddressComponent implements OnInit {
+  stores;
   constructor(
     private geoService: GeoService
   ) {
-    this.storeAddresses = this.geoService.getStoreAdresses()
+    this.stores = this.geoService.getStores()
   }
  
 

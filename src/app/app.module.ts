@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { StoreListComponent } from './store-list/store-list.component';
 import { StoreDetailsComponent } from './store-details/store-details.component';
-import { StoresComponent } from './stores/stores.component';
+import { StoreAddressComponent } from './store-address/store-address.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { StoresComponent } from './stores/stores.component';
     TopBarComponent,
     StoreListComponent,
     StoreDetailsComponent,
-    StoresComponent
+    StoreAddressComponent
   ],
   imports: [
     BrowserModule,

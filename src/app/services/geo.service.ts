@@ -38,7 +38,7 @@ export class GeoService {
 
   
 
-  getStoreAdresses():Observable<Store> {
+  getStores():Observable<Store> {
     let header = new HttpHeaders();
     header = header.set('Content-Type', 'application/json; charset=utf-8');
     return this.apiService.get('/stores/', new HttpHeaders({'Content-Type':'application/json; charset=utf-8'}))
