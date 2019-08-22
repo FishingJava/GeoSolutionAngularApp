@@ -47,7 +47,12 @@ export class GeoService {
     return this.items;
   } 
 
-  
+  addStore(store){
+    let header = new HttpHeaders();
+    header = header.set('Content-Type', 'application/json; charset=utf-8');
+    return this.apiService.post('/stores/',store)
+      .pipe(map(data => data));
+  }
 
   getStores():Observable<Store> {
     let header = new HttpHeaders();

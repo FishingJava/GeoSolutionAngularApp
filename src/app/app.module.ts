@@ -9,6 +9,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { StoreListComponent } from './store-list/store-list.component';
 import { StoreDetailsComponent } from './store-details/store-details.component';
 import { StoreAddressComponent } from './store-address/store-address.component';
+import { StoreFormComponent } from './store-form/store-form.component';
+import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,17 @@ import { StoreAddressComponent } from './store-address/store-address.component';
     TopBarComponent,
     StoreListComponent,
     StoreDetailsComponent,
-    StoreAddressComponent
+    StoreAddressComponent,
+    StoreFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ], 
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
