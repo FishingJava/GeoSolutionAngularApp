@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { GeoService } from '../services/geo.service';
 import { Store } from '../models/store.model';
 import { Router } from '@angular/router';
+import { Errors } from '../models/errors.model';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class StoreFormComponent implements OnInit {
   store: Store = {} as Store;
-  errors: Object = {};
+  errors: Errors = {} as Errors;
   isSubmitting = false;
 
   categories = [];
