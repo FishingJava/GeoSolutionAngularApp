@@ -10,12 +10,31 @@ import {LocalStorage} from '../localstore-cache/localstoragewrappwer';
 })
 export class StoreListComponent implements OnInit {
    stores;
- 
+   filteredStores;
+   private _searchTerm:string;
+
+   set searchTerm(value:string){
+     this._searchTerm = value;
+     this.filteredStores = this.filterStores( value);
+   }
+
+   get searchTerm(){
+    return this._searchTerm;
+  }
+
+ filterStores( searchString:string){
+   return this.stores.filter(store =>
+     store.shopName.toLowerCase().indexOf(searchString.toLowerCase()) !== -1)
+ }
 
   constructor(
     private geoService: GeoService
   ) {
-     this.geoService.getStores().subscribe(stores => this.stores=stores)
+     this.geoService.getStores().subscribe(stores =>{ 
+       this.stores=stores
+       this.filteredStores = stores;
+      }
+      )
     
    }
 

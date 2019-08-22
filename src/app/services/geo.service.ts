@@ -50,7 +50,7 @@ export class GeoService {
   addStore(store){
     let header = new HttpHeaders();
     header = header.set('Content-Type', 'application/json; charset=utf-8');
-    return this.apiService.post('/stores/',store)
+    return this.apiService.post('/stores',store,header)
       .pipe(map(data => data));
   }
 
