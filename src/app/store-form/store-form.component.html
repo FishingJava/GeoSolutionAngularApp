@@ -1,44 +1,48 @@
 <h3>Store Information</h3>
-<form [formGroup]="storeProfileForm" >
+<form [formGroup]="storeProfileForm"  class="relative">
   
     <label>
       Shop Name:
-      <input type="text" formControlName="shopName">
+      <input type="text" formControlName="shopName" class="absolute">
     </label>
-  
+    <br/>
     <label>
       Owner Name:
-      <input type="text" formControlName="ownerName">
+      <input type="text" formControlName="ownerName" class="absolute">
     </label>
+    <br/>
     <label>
       Category:
-      <input type="text" formControlName="category">
+      <input type="text" formControlName="category" class="absolute">
     </label>
-    
+    <br/>
   <div formGroupName="address"> 
     <h3>Address</h3>
   
     <label>
       Street:
-      <input type="text" formControlName="street">
+      <input type="text" formControlName="street" class="absolute">
     </label>
-  
+    <br/>
     <label>
       City:
-      <input type="text" formControlName="city">
+      <input type="text" formControlName="city" class="absolute">
     </label>
-    
+    <br/>
     <label>
       State:
-      <input type="text" formControlName="state">
+      <input type="text" formControlName="state" class="absolute">
     </label>
-  
+    <br/>
     <label>
       Zip Code:
-      <input type="text" formControlName="zip">
+      <input type="text" formControlName="zip" class="absolute">
     </label>
+    <br/>
   </div>
-  <button class="btn btn-lg pull-xs-right btn-primary" type="button" (click)="submitForm()">
+  <p>
+  <button class="btn btn-lg pull-xs-right btn-primary absolute btn-style" type="button" (click)="submitForm()">
     Save Store
   </button>
+  </p>
 </form>
