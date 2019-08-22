@@ -10,11 +10,14 @@
       Owner Name:
       <input type="text" formControlName="ownerName" class="absolute">
     </label>
-    <br/>
-    <label>
-      Category:
-      <input type="text" formControlName="category" class="absolute">
-    </label>
+    <br/>    
+  <label for="categories">Category:
+  <select formControlName="category" id="categories" class="absolute select-style">
+    <option *ngFor="let order of categories; let i = index" [value]="categories[i].id">
+      {{categories[i].name}}
+    </option>
+  </select>
+</label>
     <br/>
   <div formGroupName="address"> 
     <h3>Address</h3>

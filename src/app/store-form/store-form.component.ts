@@ -15,6 +15,8 @@ export class StoreFormComponent implements OnInit {
   errors: Object = {};
   isSubmitting = false;
 
+  categories = [];
+
   storeProfileForm = this.fb.group({
     shopName: ['', Validators.required,Validators.minLength(4) ],
     ownerName: [''],
@@ -27,10 +29,21 @@ export class StoreFormComponent implements OnInit {
     }),
   });
 
-  constructor(private fb: FormBuilder,private geoService: GeoService,private router: Router) { }
+  constructor(private fb: FormBuilder,private geoService: GeoService,private router: Router) { 
+    this.categories = this.getCategories();
+  }
  
 
   ngOnInit() {
+  }
+
+  getCategories() {
+    return [
+      //ToDo: Replace the hard coded constants.
+      { id: '1', name: 'store' },
+      { id: '2', name: 'mall' },
+      { id: '3', name: 'shop' }
+    ];
   }
 
   submitForm() {
