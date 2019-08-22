@@ -25,7 +25,8 @@ export class StoreFormComponent implements OnInit {
       street: [''],
       city: [''],
       state: [''],
-      zip: ['']
+      zip: [''],
+      country: ['']
     }),
   });
 
@@ -36,13 +37,14 @@ export class StoreFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
   getCategories() {
     return [
       //ToDo: Replace the hard coded constants.
-      { id: '1', name: 'store' },
-      { id: '2', name: 'mall' },
-      { id: '3', name: 'shop' }
+      { id: 'GS', name: 'General store' },
+      { id: 'M', name: 'Mall' },
+      { id: 'S', name: 'Supermarket' },
+      { id: 'MS', name: 'Medical store' }
     ];
   }
 
@@ -54,7 +56,7 @@ export class StoreFormComponent implements OnInit {
 
     // post the changes
     this.geoService.addStore(this.store).subscribe(
-      store => this.router.navigateByUrl('/store/' + store.shopName),
+      store => this.router.navigate(['']),
       err => {
         this.errors = err;
         this.isSubmitting = false;
@@ -62,8 +64,13 @@ export class StoreFormComponent implements OnInit {
     );
   }
 
-  updateStore(values: Object) {
+  updateStore(values: any) {
     Object.assign(this.store, values);
+    this.store.physicalAddress = values.address.street + ", " +
+                                 values.address.city + ", " +
+                                 values.address.state + " " +
+                                 values.address.zip + ", " +
+                                 values.address.country;
   }
 
 
