@@ -1,7 +1,13 @@
 <h3>Store Addresses</h3>
-
+<div class="relative">
+<div class="store-item">   
+  <span><h4>Category</h4></span>
+  <span><h4 class="absolute">Shop Name</h4></span>
+  <span><h4>Physical Address</h4></span>
+</div>
 <div class="store-item" *ngFor="let store of stores | async">
   <span>{{ store.category }}</span>
-  <span>{{ store.shopName  }}</span>
+  <span class="absolute">{{ store.shopName  }}</span>
   <span>{{ store.physicalAddress  }}</span>
+</div>
 </div>
