@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'store-address', component: StoreAddressComponent },
   { path: 'detail', component: StoreDetailsComponent },
   { path: 'store', component: StoreFormComponent },
+  { path: 'store/:storeId', component: StoreFormComponent }
 ];
 
 @NgModule({

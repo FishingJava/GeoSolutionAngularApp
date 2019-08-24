@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import{Router, ActivatedRoute} from '@angular/router'
 
 //import { stores } from '../stores';
 import { GeoService } from '../services/geo.service';
@@ -16,13 +16,13 @@ export class StoreDetailsComponent implements OnInit {
   store;
   constructor(
     private route: ActivatedRoute,
-    private geoservoce: GeoService
+    private geoservoce: GeoService,
+    private router : Router
   ) { }
 
 
   ngOnInit() {
-    this.route.paramMap.subscribe( params => {
-  
+    this.route.paramMap.subscribe( params => {  
     let stores = LocalStorage.getData('stores');
     let storeId = params.get('storeId');
     for(var i=0; i< stores.length; i++){
@@ -34,8 +34,8 @@ export class StoreDetailsComponent implements OnInit {
   });
   }
 
-  editStore(store) {
-    window.alert('The store has been edited!');
+  editStore(storeId: number) {
+    this.router.navigate(['/store', storeId]);
     //ToDo: Remove the above the alert and perform
     // the actual update operation as shown below.    
     //this.geoservoce.updateStore(store);

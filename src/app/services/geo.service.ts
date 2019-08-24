@@ -15,14 +15,12 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class GeoService {
+export class GeoService {  
   
   items = [];
   constructor (
     private apiService: ApiService
-  ) {}
-
-  
+  ) {}  
 
   addToStore(store) {
     //ToDo: properly hook it to the ApiService http post method.
@@ -58,6 +56,13 @@ export class GeoService {
     let header = new HttpHeaders();
     header = header.set('Content-Type', 'application/json; charset=utf-8');
     return this.apiService.get('/stores/', new HttpHeaders({'Content-Type':'application/json; charset=utf-8'}))
+      .pipe(map(data => data));
+  }
+
+  getStore(storeId: number):Observable<Store> {
+    let header = new HttpHeaders();
+    header = header.set('Content-Type', 'application/json; charset=utf-8');
+    return this.apiService.get('/store/' + storeId, new HttpHeaders({'Content-Type':'application/json; charset=utf-8'}))
       .pipe(map(data => data));
   }
 }
