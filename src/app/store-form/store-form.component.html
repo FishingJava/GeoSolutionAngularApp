@@ -4,8 +4,8 @@
     <label>
       Shop Name:
       <input type="text" formControlName="shopName" class="absolute">
-    </label>
-    <br/>
+      </label>
+      <br/>
     <label>
       Owner Name:
       <input type="text" formControlName="ownerName" class="absolute">
@@ -49,7 +49,7 @@
     <br/>
   </div>
   <p>
-  <button class="btn btn-lg pull-xs-right btn-primary absolute btn-style" type="button" (click)="submitForm()">
+  <button class="btn btn-lg pull-xs-right btn-primary absolute btn-style" type="button" (click)="submitForm()" [disabled]="!storeProfileForm.valid">
     Save Store
   </button>
   </p>

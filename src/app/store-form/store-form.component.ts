@@ -22,20 +22,15 @@ export class StoreFormComponent implements OnInit {
   categories = [];
 
   storeProfileForm = this.fb.group({
-    shopName: ['',Validators.compose(
-                                      [Validators.required, 
-                                      Validators.maxLength(32),
-                                      Validators.minLength(4)]
-                                    ) 
-              ],
-    ownerName: [''],
-    category:[''],
+    shopName: ['',[Validators.required, Validators.maxLength(32), Validators.minLength(4)]],
+    ownerName: ['',[Validators.required, Validators.maxLength(32), Validators.minLength(4)]],
+    category:['',Validators.required],
     address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: [''],
-      country: ['']
+      street: ['',[Validators.required, Validators.maxLength(255), Validators.minLength(8)]],
+      city: ['',[Validators.required, Validators.maxLength(50), Validators.minLength(2)]],
+      state: ['',[Validators.required, Validators.maxLength(50), Validators.minLength(2)]],
+      zip: ['',[Validators.required, Validators.maxLength(32), Validators.minLength(5)]],
+      country: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(2)]]
     }),
   });
 
